@@ -1,0 +1,35 @@
+name: Documentation
+description: Report missing, unclear, or incorrect documentation
+labels: ["documentation"]
+body:
+    - type: markdown
+      attributes:
+          value: |
+              Please fill out the sections below to help improve the documentation.
+    - type: textarea
+      id: description
+      attributes:
+          label: What is missing or unclear?
+          placeholder: The README does not explain how to configure X
+      validations:
+          required: true
+    - type: input
+      id: location
+      attributes:
+          label: Where did you look?
+          placeholder: README.md, a specific section, or a docs page
+    - type: textarea
+      id: suggestion
+      attributes:
+          label: Suggested improvement
+          placeholder: Add an example that shows how to do X
+    - type: dropdown
+      id: assign
+      attributes:
+          label: "Would you like to work on this issue?"
+          options:
+              - "Yes"
+    - type: markdown
+      attributes:
+          value: |
+              Thanks for helping improve the docs!

@@ -1,0 +1,49 @@
+name: Format
+
+on:
+    workflow_call:
+        inputs:
+            node-version:
+                description: Node.js version to use
+                type: string
+                default: "22"
+            format-command:
+                description: npm script used to format files
+                type: string
+                default: format
+            commit-message:
+                description: Commit message used when formatting changes are applied
+                type: string
+                default: "feat(format): apply formatting changes"
+
+permissions:
+    contents: write
+
+jobs:
+    format:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+              with:
+                  ref: ${{ github.head_ref || github.ref_name }}
+                  persist-credentials: true
+
+            - name: Set up Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ inputs.node-version }}
+                  cache: npm
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Format files
+              run: npm run ${{ inputs.format-command }}
+
+            - name: Commit changes
+              if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+              uses: stefanzweifel/git-auto-commit-action@v5
+              with:
+                  commit_message: ${{ inputs.commit-message }}
+                  branch: ${{ github.head_ref || github.ref_name }}

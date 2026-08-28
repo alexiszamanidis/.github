@@ -1,0 +1,26 @@
+title: "[Question] "
+labels: ["question"]
+body:
+    - type: markdown
+      attributes:
+          value: |
+              Ask a question about using the project. Check the README and existing issues or discussions first.
+    - type: textarea
+      id: question
+      attributes:
+          label: What do you want to know?
+          placeholder: How do I configure X?
+      validations:
+          required: true
+    - type: textarea
+      id: context
+      attributes:
+          label: Context
+          placeholder: What you already tried, your environment, and any relevant error messages
+    - type: checkboxes
+      id: searched
+      attributes:
+          label: Before asking
+          options:
+              - label: I searched the README, issues, and discussions
+                required: true

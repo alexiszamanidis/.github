@@ -13,5 +13,5 @@ Harassment, discrimination, personal attacks, and disruptive behavior are not ac
 
 ## Enforcement
 
-Report unacceptable behavior privately to the repository maintainer. Reports will be reviewed and handled as confidentially as possible.
+Report unacceptable behavior privately to the repository maintainer, [@alexiszamanidis](https://github.com/alexiszamanidis). Reports will be reviewed and handled as confidentially as possible.
 

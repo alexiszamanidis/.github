@@ -1,0 +1,24 @@
+title: "[Idea] "
+labels: ["enhancement"]
+body:
+    - type: markdown
+      attributes:
+          value: |
+              Share an idea or improvement. This is for discussion, not a formal feature request.
+    - type: textarea
+      id: idea
+      attributes:
+          label: What is the idea?
+          placeholder: It would be useful if the project could...
+      validations:
+          required: true
+    - type: textarea
+      id: problem
+      attributes:
+          label: What problem does it solve?
+          placeholder: Today I have to do X manually
+    - type: textarea
+      id: alternatives
+      attributes:
+          label: Alternatives you considered
+          placeholder: I tried Y, but it does not cover Z
